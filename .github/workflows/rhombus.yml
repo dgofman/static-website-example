@@ -2,7 +2,7 @@ name: Rhombus Power Demo CI/CD
 
 on:
   push:
-    branches: ['master']
+    branches: ['latest']
 
 jobs:
   #https://docs.github.com/en/actions/publishing-packages/publishing-docker-images
