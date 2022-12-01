@@ -29,6 +29,7 @@ jobs:
           context: .
           push: true
           tags: latest
+          labels: ''
 
       # https://github.com/marketplace/actions/hashicorp-setup-terraform
       - uses: hashicorp/setup-terraform@v2
