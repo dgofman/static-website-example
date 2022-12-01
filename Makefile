@@ -11,7 +11,7 @@ docker tag rhombus/website dgofman/rhombus
 
 docker push dgofman/rhombus
 
-docker run -p 80:80 --name rhombus dgofman/rhombus
+docker run -p 80:80 --name rhombus dgofman/rhombus:master
 
 # Deploy all
 

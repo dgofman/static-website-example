@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     kubernetes = {
-      source  = "hashicorp/kubernetes"
+      source = "hashicorp/kubernetes"
     }
   }
 }
@@ -36,7 +36,7 @@ resource "kubernetes_deployment" "rhombus-deploy" {
       }
       spec {
         container {
-          image = "dgofman/rhombus"
+          image = "dgofman/rhombus:master"
           name  = "rhombus-website"
           port {
             container_port = 80
@@ -66,6 +66,6 @@ resource "kubernetes_service" "rhombus-svc" {
   wait_for_load_balancer = true
 }
 
-output "URL" { 
+output "URL" {
   value = "http://${kubernetes_service.rhombus-svc.status.0.load_balancer.0.ingress.0.hostname}"
 }

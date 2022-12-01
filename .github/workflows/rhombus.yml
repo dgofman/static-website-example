@@ -29,15 +29,10 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: latest
+          labels: ${{ steps.meta.outputs.labels }}
 
       # https://github.com/marketplace/actions/hashicorp-setup-terraform
       - uses: hashicorp/setup-terraform@v2
-      - name: Terraform fmt
-        id: fmt
-        working-directory: ./terraform
-        run: terraform fmt -check
-        continue-on-error: true
       - name: Terraform Init
         id: init
         working-directory: ./terraform
