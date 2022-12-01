@@ -28,8 +28,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: latest
-          labels: ''
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: latest
 
       # https://github.com/marketplace/actions/hashicorp-setup-terraform
       - uses: hashicorp/setup-terraform@v2
