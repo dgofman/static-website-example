@@ -103,7 +103,7 @@ resource "aws_eks_node_group" "worker-node-group" {
   node_group_name = "rhombus-workernodes"
   node_role_arn   = aws_iam_role.workernodes.arn
   subnet_ids      = aws_subnet.rhombus-subnet[*].id
-  instance_types  = ["t3.medium"]
+  instance_types  = ["t2.micro"]
   disk_size       = 5
 
   scaling_config {
